@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="animate.min.css" rel="stylesheet" type="text/css">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
+<script type="text/javascript" src="preventreload.js"></script>
+    
+<script type="text/javascript" src="materialize.js"></script>
+<link href="waves.css" rel="stylesheet" type="text/css">
+    
+<script type="text/javascript">
+    
+// Check if update is available
+    
+$(document).ready(function() {
+
+});
+
+</script>
+
+
+
+    
+
+
+<script type="text/javascript">
+
+function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+        init();
+        screen.lockOrientation('portrait');
+    }
+
+
+
+function showindicator() {
+	document.getElementById("loadingindicator").className = "animated fadeIn";
+document.getElementById("loadingindicator").style.display = "block";
+}
+
+function letsgo() {
+	setTimeout(function(){
+	document.location.href = 'main/start.html';
+	}, 1000);
+}
+
+// Wait for PhoneGap to load
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function playAudio() {
+  //var audioElement = document.getElementById(id);
+  //var url = audioElement.getAttribute('src');
+  var my_media = new Media('http://enunua.com/gormahia/kogalo.mp3',
+  // success callback
+  function () { console.log("playAudio():Audio Success"); },
+  // error callback
+  function (err) { console.log("playAudio():Audio Error: " + err); });
+  // Play audio
+  my_media.play();
+}
+
+function plswait() {
+document.getElementById('audiobutton').style.display = "none";
+}
+function plswaitweg() {
+document.getElementById('audiobutton').style.display = "block";
+}
+
+
+function init() {
+
+}
+
+document.addEventListener('deviceready', function () {
+  // Enable to debug issues.
+  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+  
+  var notificationOpenedCallback = function(jsonData) {
+    console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal.init("e2208c1d-2c91-40a7-b094-7117a4975cfd",
+                                 {googleProjectNumber: "1074986176841"},
+                                 notificationOpenedCallback);
+  
+  // Show an alert box if a notification comes in when the user is in your app.
+  window.plugins.OneSignal.enableInAppAlertNotification(true);
+}, false);
+
+
+
+</script>
+
+</head>
+    
+
+<body>
+
+<div id="pageloader"></div>
+
+    <style>
+        #pageloader {
+            
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            display: none;  
+        }
+
+     </style>
+    
+    <script> 
+    function pageloader () {
+        
+        document.getElementById("pageloader").style.display="block";
+        document.getElementById("videoloader").style.display="none";
+        document.getElementById("videoloader").innerHTML="";
+        
+$( "#pageloader" ).load( "http://enunua.com/backstage_app/blog/news.php", function() {
+
+});
+    }
+
+ </script>
+    
+
+<div id="videoloader"></div>
+
+    <style>
+        #videoloader {
+            
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            display: none;  
+        }
+
+     </style>
+    
+    <script> 
+    function videoloader () {
+        
+        document.getElementById("videoloader").style.display="block";
+        
+$( "#videoloader" ).load( "http://enunua.com/backstage_app/videos/videos.php", function() {
+
+});
+    }
+
+ </script>
+    
+    
+    
+    
+
+<div id="menutop">
+<svg onclick="mainmenu();" style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#ffffff" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+    </svg>
+</div>
+
+<style> 
+    #menutop {
+        padding: 5px;
+        position: absolute;
+        z-index: 500;
+        
+    }
+    
+    </style>
+
+<img style="width:100%" src="bsl.jpg">
+<div>Back-Stage <br>
+TV-Production Salomon <br>
+info@tv-production-salomon.de <br>
+</div>
+<footer>Powerd by Dagou Apps</footer>
+
+    <script>
+function mainmenu(){
+    // document.getElementById("mainmenu").style.height="100%";
+    //document.getElementById("mainmenu").style.display="block";
+    setTimeout(function(){
+    document.getElementById("mainmenu").style.marginTop="0%";
+    }, 001);
+}
+
+function closed() {
+    document.getElementById("mainmenu").style.marginTop="-150%";
+    setTimeout(function(){
+    //document.getElementById("mainmenu").style.display="none";
+    }, 1000);   
+    
+}
+    
+
+</script>
+
+<style>
+    nav {
+        position: absolute; 
+        top: 0px;
+        margin-top: -150%;
+        width: 100%; 
+        height: 100%;
+        background-image: url(background.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-family: sans-serif;
+        transition: all 1s;
+        z-index: 1000
+    }
+    
+    nav div {
+        background-color: #b57a0c;
+        line-height: 250%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        border-radius: 8px;
+        font-family: sans-serif;
+        transition: all 0.5s;
+        text-transform: uppercase;
+    
+    }
+
+nav div:hover {
+        background-color: #bfa900;
+        transition: all 0.5s;
+    
+    
+    }
+</style>
+
+<nav id="mainmenu"> 
+<div style="margin-top:30px;" onclick="closed();">About</div>
+<div onclick="closed();videoloader();">Videos</div>
+<div onclick="closed();">Wallpaper</div>
+<div onclick="closed();pageloader();">News</div>
+<div onclick="closed();charpage();">Charakters</div>
+<div onclick="closed();">Fan Shop</div>
+</nav>
+
+
+
+    
+</body>
+</html>
