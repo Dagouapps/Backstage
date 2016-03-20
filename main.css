@@ -255,7 +255,7 @@ button:focus {
 	top: 0px;
 	text-align: center;
 	background-image: url(main/img/logo_on_dark.png);
-	background-color: rgba(0, 102, 52, 0.84);
+	background-color: rgba(191, 125, 0, 0.84);
 	background-repeat: no-repeat;
 	background-size: auto 80%;
 	background-position: center center;
