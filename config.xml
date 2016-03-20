@@ -15,11 +15,7 @@
         Dagou Apps
     </author>
         
-    <platform name="android" />
-	
-	<icon src="icon.png" />
-        
-    <gap:splash src="splash.jpg" gap:platform="winphone" />
+	<icon src="icon.png" />   
 	
 	<!-- Core plugins -->
     <gap:plugin name="cordova-plugin-device" source="npm" />
