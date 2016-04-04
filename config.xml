@@ -19,11 +19,10 @@
 	
 	<!-- Core plugins -->
     <gap:plugin name="cordova-plugin-device" source="npm" />
-    <gap:plugin name="cordova-plugin-dialogs" source="npm" />
-    <gap:plugin name="cordova-plugin-geolocation" source="npm" />
+
     <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
     <gap:plugin name="cordova-plugin-media" source="npm" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" />
+
     <gap:plugin name="cordova-plugin-legacy-whitelist" source="npm" />
         
    <gap:plugin name="cordova-plugin-screen-orientation" source="npm" />
@@ -31,8 +30,6 @@
     <gap:plugin name="onesignal-cordova-plugin-pgb-compat" source="npm" />
     <gap:plugin name="cordova-plugin-googleplayservices" source="npm" />
     <gap:plugin name="cordova-plugin-android-support-v4" source="npm" />
-        
-    <gap:plugin name="cordova-plugin-barcodescanner" source="npm" />
 
 	<gap:plugin name="ca.purplemad.wallpaper" />
 	<gap:plugin name="it.mobimentum.phonegapspinnerplugin" />
